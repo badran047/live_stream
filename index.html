@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Live Stream</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <style type="text/css">
+    	.wrapper {	
+    		padding: 50px;
+    	}
+    	.subont{
+    		padding-left: 20px;
+    	}
+  	</style>
+	</head>
+
+	<body>
+		<nav class="navbar navbar-inverse navbar-fixed-top">
+		  <div class="container-fluid">
+		    <div class="navbar-header">
+		      <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#myNavbar">
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		      </button>
+		      <!-- <a class="navbar-brand"></a> -->
+		    </div>
+		  </div>
+		</nav>
+		<div class="wrapper" style="text-align: center;">
+     		<h1>Live streaming with sentiment</h1>
+      		<hr>
+      		<br/ >
+			<div id="container" style="text-align: center;">
+				<video autoplay="true" id="videoElement">
+				</video>
+			</div>
+			<script type="text/javascript">
+				var video = document.querySelector("#videoElement");
+
+				if (navigator.mediaDevices.getUserMedia) {
+			  	navigator.mediaDevices.getUserMedia({ video: true })
+			    	.then(function (stream) {
+			      	video.srcObject = stream;
+			    	})
+			    	.catch(function (err0r) {
+			      	console.log("Something went wrong!");
+			    	});
+				}
+			</script>
+    	</div>
+	</body>
+</html> 
